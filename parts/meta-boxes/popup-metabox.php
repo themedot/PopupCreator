@@ -5,21 +5,21 @@ Post Type: popup
  */
 piklist( 'field', [
     'type'        => 'text',
-    'field'       => 'display_after',
+    'field'       => 'popupcreator_display_after',
     'label'       => __('Display Popup After','popupcreator'),
-    'value'       => '0',
+    'value'       => '5',
     'help'        => __('in seconds','popupcreator'),
 ] );
 
 piklist( 'field', [
     'type'        => 'url',
-    'field'       => 'url',
+    'field'       => 'popupcreator_url',
     'label'       => __('URL','popupcreator'),
 ] );
 
 piklist( 'field', [
     'type'        => 'checkbox',
-    'field'       => 'auto_hide',
+    'field'       => 'popupcreator_auto_hide',
     'label'       => __('Auto Hide','popupcreator'),
     'value'       => 1,
     'choices'  => [
@@ -28,7 +28,7 @@ piklist( 'field', [
 ] );
 piklist( 'field', [
     'type'        => 'checkbox',
-    'field'       => 'on_exit',
+    'field'       => 'popupcreator_on_exit',
     'label'       => __('Display On Exit','popupcreator'),
     'value'       => 1,
     'choices'  => [
@@ -37,7 +37,7 @@ piklist( 'field', [
 ] );
 piklist( 'field', [
     'type'        => 'select',
-    'field'       => 'on_exit',
+    'field'       => 'popupcreator_popup_image',
     'label'       => __('Popup Image Size','popupcreator'),
     'value'       => 'landscape',
     'choices'  => [
