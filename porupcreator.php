@@ -17,6 +17,11 @@ class PopupCreator {
         add_action( 'plugin_loaded', [$this, 'load_textdomain'] );
         add_action( 'init', [$this, 'register_cpt_popups'] );
         add_action( 'init', [$this,'register_image_size'] );
+        add_action( 'wp_enqueue_scripts', array($this,'load_assets') );
+    }
+
+    public function load_assets(){
+        wp_enqueue_script('popupcreator-main', plugin_dir_url( __FILE__ ).'assets/js/popupcreator-main.js',array('jquery'),time(),true);
     }
 
     public function register_image_size(){
