@@ -9,12 +9,19 @@ Author URI: http://example.com/
 License: GPLv2 or later
 Text Domain: popupcreator
 Domain Path: /languages
+plugin type: piklist
  */
 
 class PopupCreator {
     public function __construct() {
         add_action( 'plugin_loaded', [$this, 'load_textdomain'] );
         add_action( 'init', [$this, 'register_cpt_popups'] );
+        add_action( 'init', [$this,'register_image_size'] );
+    }
+
+    public function register_image_size(){
+        add_image_size( 'popup-landscape', '600', '800', true );
+        add_image_size( 'popup-square', '500', '500', true );
     }
 
     public function load_textdomain() {
