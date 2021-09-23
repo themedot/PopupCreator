@@ -18,6 +18,7 @@ class PopupCreator {
         add_action( 'init', [$this, 'register_cpt_popups'] );
         add_action( 'init', [$this,'register_image_size'] );
         add_action( 'wp_enqueue_scripts', array($this,'load_assets') );
+        add_action( 'wp_footer', [$this,'print_modal_markup'] );
     }
 
     public function load_assets(){
@@ -65,6 +66,18 @@ class PopupCreator {
         ];
         register_post_type( 'popup', $args );
 
+    }
+
+    public function print_modal_markup(){
+        ?>
+            <div id="modal-content" style="">
+                <div>
+                    <img id="close-button" width="30" 
+                        src="<?php plugin_dir_url( __FILE__ ).'assets/images/x.png' ?>" alt="<?php _e('close','popupcreator') ?>">
+                </div>
+                <img src="https://unsplash.com/photos/fBYUDfkcBqc" alt="image">
+            </div>
+        <?php
     }
 
 }

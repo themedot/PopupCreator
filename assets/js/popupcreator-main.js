@@ -1,1 +1,5 @@
-alert('this is popup creator main page');
+;(function($){
+    $(document).ready(function(){
+        
+    });
+})
