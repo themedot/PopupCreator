@@ -21,6 +21,8 @@ class PopupCreator {
     }
 
     public function load_assets(){
+        wp_enqueue_style('modal-css',plugin_dir_url(__FILE__ ).'assets/css/modal.css',null,time());
+        wp_enqueue_script('plainmodal-js',plugin_dir_url( __FILE__ ).'assets/js/plain-modal.main.js',null,'1.0.23',true);
         wp_enqueue_script('popupcreator-main', plugin_dir_url( __FILE__ ).'assets/js/popupcreator-main.js',array('jquery'),time(),true);
     }
 
